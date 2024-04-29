@@ -29,14 +29,14 @@ alias edit="nvim /Users/rami/.zshrc"
 alias reload="source /Users/rami/.zshrc"
 
 # navigation
-alias dev="cd /Users/rami/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer"
+alias cloud="cd /Users/rami/Library/Mobile\ Documents/com\~apple\~CloudDocs/"
 
 # selenium autotrader
-alias edit-trade="nvim /Users/rami/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/scripts/selenium-auto-trader/commands.txt"
-alias run-trade="conda activate revs && python3 /Users/rami/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/scripts/selenium-auto-trader/run.py"
+alias edit-trade="nvim /Users/rami/Developer/scripts/selenium-auto-trader/commands.txt"
+alias run-trade="conda activate revs && python3 /Users/rami/Developer/scripts/selenium-auto-trader/run.py"
 
 # mail splits
-alias mail-splits="conda activate revs && python3 /Users/rami/Library/Mobile\ Documents/com~apple~CloudDocs/Developer/scripts/reverse-split-emailer/mailSplits.py"
+alias mail-splits="conda activate revs && python3 /Users/rami/Developer/scripts/reverse-split-emailer/mailSplits.py"
 
 # git
 alias view-branches="git log --graph --oneline --decorate --all"
