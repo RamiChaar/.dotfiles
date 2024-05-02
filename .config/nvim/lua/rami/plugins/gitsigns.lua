@@ -1,3 +1,4 @@
+-- plugin for various commands for git hunks within files
 return {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },

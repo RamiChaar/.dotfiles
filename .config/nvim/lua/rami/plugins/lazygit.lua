@@ -1,3 +1,4 @@
+-- plugin for lazygit integration
 return {
     "kdheepak/lazygit.nvim",
     cmd = {

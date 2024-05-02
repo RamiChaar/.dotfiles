@@ -1,3 +1,4 @@
+-- plugin to support navigation between nvim and tmux panes
 return {
     "christoomey/vim-tmux-navigator",
     cmd = {

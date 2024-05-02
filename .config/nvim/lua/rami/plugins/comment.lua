@@ -1,3 +1,4 @@
+-- Easier Commenting with gcc,gbc 
 return {
     "numToStr/Comment.nvim",
     event = { "BufReadPre", "BufNewFile" },

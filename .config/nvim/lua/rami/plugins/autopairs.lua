@@ -1,3 +1,4 @@
+-- Automatically insert pairs for '',"",,``,(),[],{}
 return {
     "windwp/nvim-autopairs",
     event = { "InsertEnter" },

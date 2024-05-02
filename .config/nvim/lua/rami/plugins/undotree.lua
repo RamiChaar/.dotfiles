@@ -1,3 +1,4 @@
+-- plugin for undotree
 return {
     "mbbill/undotree",
 

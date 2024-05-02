@@ -1,3 +1,4 @@
+-- Color scheme
 return {
     {
         "rebelot/kanagawa.nvim",

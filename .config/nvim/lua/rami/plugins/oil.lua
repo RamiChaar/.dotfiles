@@ -1,3 +1,4 @@
+-- default file explorer / editor
 return {
     'stevearc/oil.nvim',
     opts = {},

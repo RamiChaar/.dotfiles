@@ -1,3 +1,4 @@
+-- plugin for harpoon 
 return {
 	"ThePrimeagen/harpoon",
 	lazy = false,

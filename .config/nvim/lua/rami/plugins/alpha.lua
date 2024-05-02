@@ -1,3 +1,4 @@
+-- Create welcome page and shortcuts
 return {
     "goolord/alpha-nvim",
     event = "VimEnter",

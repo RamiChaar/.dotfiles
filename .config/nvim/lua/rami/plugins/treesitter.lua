@@ -1,3 +1,4 @@
+-- plugin for treesitter syntax support
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",

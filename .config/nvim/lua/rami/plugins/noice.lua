@@ -1,3 +1,4 @@
+-- plugin for better nvim UI for commands, searching, and messages
 return {
     "folke/noice.nvim",
     event = "VeryLazy",

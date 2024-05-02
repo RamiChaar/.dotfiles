@@ -1,3 +1,4 @@
+-- plugin to support adding / removing / changing surrounded character
 return {
     "kylechui/nvim-surround",
     event = { "BufReadPre", "BufNewFile" },
