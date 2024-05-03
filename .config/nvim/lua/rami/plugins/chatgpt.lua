@@ -24,10 +24,8 @@ return {
                 }
             },
             popup_layout = {
-                default = "right",
                 right = {
                     width = "40%",
-                    height = "80%"
                 }
             },
             popup_input = {
