@@ -10,7 +10,32 @@ return {
     },
     config = function()
         require("chatgpt").setup({
-            api_key_cmd = "pass show personal/api/openai/chatgpt.nvim",
+            api_key_cmd = "pass show personal/api/openai/chatgpt",
+            chat = {
+                welcome_message = "How can I help you today?",
+                answer_sign = "", -- 🤖
+                sessions_window = {
+                    active_sign = " 󰄯 ",
+                    inactive_sign = " 󰄰 ",
+                    current_line_sign = "",
+                },
+                keymaps = {
+                    select_session = "<CR>",
+                }
+            },
+            popup_layout = {
+                default = "right",
+                right = {
+                    width = "40%",
+                    height = "80%"
+                }
+            },
+            popup_input = {
+                submit = "<Enter>",
+            },
         })
-    end
+        vim.keymap.set('n', '<leader>gp', ":ChatGPT<CR>")
+        vim.keymap.set('n', '<leader>gc', ":ChatGPTCompleteCode<CR>")
+        vim.keymap.set('v', '<leader>ge', ":ChatGPTEditWithInstructions<CR>")
+    end,
 }
