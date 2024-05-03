@@ -56,10 +56,10 @@ return {
         -- Set menu
         dashboard.section.buttons.val = {
             dashboard.button("-", " > Open CWD", "<CMD>Oil<CR>"),
-            dashboard.button("e", " > New File", ":ene <BAR> startinsert <CR>"),
-            dashboard.button("f", "󰱼 > Find File", "<cmd>Telescope find_files<CR>"),
-            dashboard.button("s", " > Find Word", "<cmd>Telescope live_grep<CR>"),
-            dashboard.button("h", "󰒤 > Open Harpoon", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"),
+            dashboard.button("<leader>e", " > New File", ":ene <BAR> startinsert <CR>"),
+            dashboard.button("<leader>pf", "󰱼 > Find File", "<cmd>Telescope find_files<CR>"),
+            dashboard.button("<leader>ps", " > Find Word", "<cmd>Telescope live_grep<CR>"),
+            dashboard.button("<C-e>", "󰒤 > Open Harpoon", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"),
             dashboard.button("u", "󰑖 > Update Plugins", "<cmd>Lazy update<CR>"),
             dashboard.button("q", " > Quit NVIM", "<cmd>qa<CR>"),
         }

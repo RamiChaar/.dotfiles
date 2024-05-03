@@ -16,7 +16,7 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- Select all
-vim.keymap.set("n", "<leader>=", "gg<S-v>G")
+vim.keymap.set("n", "<leader>=", "gg0vG")
 
 -- keep cursor in middle when jumping and searching
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
