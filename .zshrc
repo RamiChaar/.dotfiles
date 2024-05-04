@@ -17,7 +17,7 @@ function git_branch_name() {
 
 setopt prompt_subst
 
-PS1="[%D{%H:%M:%S}]"
+PS1='%F{3}[%D{%H:%M:%S}]'
 PS1+='%F{3}[%F{6}%n@%m %F{2}/%1~%F{3}]'
 PS1+='%F{1}$(git_branch_name) '
 PS1+='%F{15}%B»%b %F{187}'

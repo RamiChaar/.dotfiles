@@ -42,6 +42,6 @@ return {
         })
     end,
     keys = {
-        { "<leader>t", "<cmd>Neotree toggle reveal show<cr>"},
+        { "<leader>t", "<cmd>Neotree toggle reveal show reveal_force_cwd<cr>"},
     }
 }
