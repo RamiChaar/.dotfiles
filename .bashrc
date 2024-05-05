@@ -18,7 +18,7 @@ PS1+='\[\033[38;5;15m\]\$ \[\033[38;5;188m\]'
 
 # aliases
 alias edit="nvim /Users/rami/.bashrc" # editing this file
-alias reload="source /Users/rami/.bashrc" # resource bash file
+alias clear="clear && printf '\e[3J'"
 
 # navigation
 alias cloud="cd /Users/rami/Library/Mobile\ Documents/com\~apple\~CloudDocs/"
