@@ -60,7 +60,7 @@ return {
             layout = {
                 { type = "padding", val = 5 },
                 header,
-                { type = "padding", val = 3 },
+                { type = "padding", val = 2 },
                 buttons,
             },
             opts = {
