@@ -1,4 +1,4 @@
--- Easier Commenting with gcc,gbc 
+-- Easier Commenting with gcc,gbc
 return {
     "numToStr/Comment.nvim",
     event = { "BufReadPre", "BufNewFile" },
@@ -15,6 +15,14 @@ return {
         comment.setup({
             -- for commenting tsx, jsx, svelte, html files
             pre_hook = ts_context_commentstring.create_pre_hook(),
+            toggler = {
+                line = '<leader>cs',
+                block = '<leader>cb',
+            },
+            opleader = {
+                line = '<leader>cs',
+                block = '<leader>cb',
+            },
         })
     end,
 }
