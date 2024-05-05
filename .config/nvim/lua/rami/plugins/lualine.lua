@@ -1,74 +1,82 @@
 -- plugin to style the neovim status line
 return {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+        "meuter/lualine-so-fancy.nvim"
+    },
     config = function()
         local lualine = require("lualine")
         local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+        local theme = require("kanagawa.colors").setup().theme
 
-        local colors = {
-            blue = "#7e9cd8",
-            green = "#76946a",
-            violet = "#957fb8",
-            yellow = "#c0a36e",
-            red = "#c34043",
-            fg = "#dcd7ba",
-            bg = "#2a2a37",
-            inactive_bg = "#2a2a37",
-        }
-
-        local lualine_theme = {
+        local kanagawa = {
             normal = {
-                a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
-                b = { bg = colors.bg, fg = colors.fg },
-                c = { bg = colors.bg, fg = colors.fg },
+                a = { bg = theme.syn.fun, fg = theme.ui.bg_m3 },
+                b = { bg = theme.ui.bg_p2, fg = theme.syn.fun },
+                c = { bg = theme.ui.bg_p1, fg = theme.ui.fg },
             },
             insert = {
-                a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-                b = { bg = colors.bg, fg = colors.fg },
-                c = { bg = colors.bg, fg = colors.fg },
-            },
-            visual = {
-                a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
-                b = { bg = colors.bg, fg = colors.fg },
-                c = { bg = colors.bg, fg = colors.fg },
+                a = { bg = theme.diag.ok, fg = theme.ui.bg },
+                b = { bg = theme.ui.bg, fg = theme.diag.ok },
             },
             command = {
-                a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
-                b = { bg = colors.bg, fg = colors.fg },
-                c = { bg = colors.bg, fg = colors.fg },
+                a = { bg = theme.syn.constant, fg = theme.ui.bg },
+                b = { bg = theme.ui.bg, fg = theme.syn.constant },
+            },
+            visual = {
+                a = { bg = theme.syn.keyword, fg = theme.ui.bg },
+                b = { bg = theme.ui.bg, fg = theme.syn.keyword },
             },
             replace = {
-                a = { bg = colors.red, fg = colors.bg, gui = "bold" },
-                b = { bg = colors.bg, fg = colors.fg },
-                c = { bg = colors.bg, fg = colors.fg },
+                a = { bg = theme.syn.operator, fg = theme.ui.bg },
+                b = { bg = theme.ui.bg, fg = theme.syn.operator },
             },
             inactive = {
-                a = { bg = colors.inactive_bg, fg = colors.semilightgray, gui = "bold" },
-                b = { bg = colors.inactive_bg, fg = colors.semilightgray },
-                c = { bg = colors.inactive_bg, fg = colors.semilightgray },
-            },
+                a = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+                b = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim, gui = "bold" },
+                c = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+            }
         }
+
+        if vim.g.kanagawa_lualine_bold then
+            for _, mode in pairs(kanagawa) do
+                mode.a.gui = "bold"
+            end
+        end
 
         -- configure lualine with modified theme
         lualine.setup({
             options = {
-                theme = lualine_theme,
+                theme = kanagawa
             },
             sections = {
+                lualine_a = { 'branch' },
+                lualine_b = {},
+                lualine_c = {
+                    { 'diff' },
+                    { 'diagnostics' },
+                    {
+                        'filename',
+                        path = 4,
+                    }
+                },
                 lualine_x = {
                     {
                         function() return require("noice").api.status.command.get() end,
                         cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-                        color = { fg = colors.blue, gui = "bold" },
+                        color = { fg = theme.syn.fun, gui = "bold" },
                     },
                     {
                         lazy_status.updates,
                         cond = lazy_status.has_updates,
                         color = { fg = "#ff9e64" },
                     },
+                    { "fancy_lsp_servers" },
                     { "filetype" },
                 },
+                lualine_y = { },
+                lualine_z = { 'progress'}
             },
         })
     end,

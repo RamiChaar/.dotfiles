@@ -6,7 +6,8 @@ return {
         require('kanagawa').setup({
             colors = {
                 palette = {
-                    samuraiRed = "#d84d26"   
+                    -- syn.operator - dragonred - c4746e
+                    samuraiRed = "#c4746e"
                 },
                 theme = {
                     all = {
@@ -22,12 +23,12 @@ return {
                     NormalFloat = { bg = "none" },
                     FloatBorder = { bg = "none" },
                     FloatTitle = { bg = "none" },
-                    NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+                    NormalDark = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
                     LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
                     MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
                 }
             end,
         })
-        vim.cmd("colorscheme kanagawa")
+        vim.cmd("colorscheme kanagawa-dragon")
     end,
 }
