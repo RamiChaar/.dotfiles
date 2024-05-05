@@ -23,12 +23,12 @@ return {
                 },
             },
         })
-        vim.keymap.set("n", "<leader>nl", function()
+        vim.keymap.set("n", "<leader>ml", function()
             require("noice").cmd("last")
         end)
-        vim.keymap.set("n", "<leader>nh", function()
+        vim.keymap.set("n", "<leader>mh", function()
             require("noice").cmd("history")
         end)
-        vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>")
+        vim.keymap.set("n", "<leader>md", "<cmd>NoiceDismiss<CR>")
     end,
 }

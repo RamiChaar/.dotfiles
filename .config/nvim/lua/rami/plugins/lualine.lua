@@ -75,8 +75,8 @@ return {
                     { "fancy_lsp_servers" },
                     { "filetype" },
                 },
-                lualine_y = { },
-                lualine_z = { 'progress'}
+                lualine_y = {},
+                lualine_z = { 'progress' }
             },
         })
     end,

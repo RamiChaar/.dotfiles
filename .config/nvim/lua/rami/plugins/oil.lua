@@ -22,7 +22,7 @@ return {
             keymaps = {
                 ["<C-h>"] = "<cmd>TmuxNavigateLeft<cr>",
                 ["<C-l>"] = "<cmd>TmuxNavigateRight<cr>",
-                ["<leader>e"] = function()
+                ["<leader>n"] = function()
                     local file_name = vim.fn.input("File Name > ")
                     vim.cmd("e " .. file_name)
                     vim.cmd("w")
