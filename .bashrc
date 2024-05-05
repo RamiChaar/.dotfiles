@@ -11,10 +11,10 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # set up prompt
 source ~/.git-prompt.sh
-PS1='\[\033[38;5;3m\][\t]'
+PS1='\[\033[38;5;3m\][\[\033[38;5;188m\]\t\[\033[38;5;3m\]]'
 PS1+='\[\033[38;5;3m\][\[\033[38;5;6m\]\u@\h \[\033[38;5;2m\]/\W\[\033[38;5;3m\]]'
 PS1+='\[\033[38;5;1m\]$(__git_ps1 "(%s)") '
-PS1+='\[\033[38;5;15m\]\$ \[\033[38;5;187m\]'
+PS1+='\[\033[38;5;15m\]\$ \[\033[38;5;188m\]'
 
 # aliases
 alias edit="nvim /Users/rami/.bashrc" # editing this file

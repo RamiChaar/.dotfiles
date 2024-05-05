@@ -6,8 +6,7 @@ return {
         require('kanagawa').setup({
             colors = {
                 palette = {
-                    -- syn.operator - dragonred - c4746e
-                    samuraiRed = "#c4746e"
+                    samuraiRed = "#c4746e" -- syn.operator - dragonred - c4746e
                 },
                 theme = {
                     all = {
@@ -23,9 +22,9 @@ return {
                     NormalFloat = { bg = "none" },
                     FloatBorder = { bg = "none" },
                     FloatTitle = { bg = "none" },
-                    NormalDark = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-                    LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-                    MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+                    NormalDark = { bg = theme.ui.bg_m2, fg = theme.ui.fg_dim },
+                    LazyNormal = { bg = theme.ui.bg_m1, fg = theme.ui.fg_dim },
+                    MasonNormal = { bg = theme.ui.bg_m2, fg = theme.ui.fg_dim },
                 }
             end,
         })
