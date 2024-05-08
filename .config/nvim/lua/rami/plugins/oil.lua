@@ -24,18 +24,20 @@ return {
                 ["<C-l>"] = "<cmd>TmuxNavigateRight<cr>",
                 ["<leader>n"] = function()
                     local file_name = vim.fn.input("File Name > ")
-                    vim.cmd("e " .. file_name)
+                    local curr_dir = require('oil').get_current_dir()
+                    print("e " .. curr_dir .. file_name)
+                    vim.cmd("e " .. curr_dir  .. file_name)
                     vim.cmd("w")
                 end,
                 ["<leader>t"] = function()
                     local curr_dir = require('oil').get_current_dir()
                     require('neo-tree.command').execute({
-                        action = "show",         -- OPTIONAL, this is the default value
+                        action = "show",          -- OPTIONAL, this is the default value
                         source = "filesystem",    -- OPTIONAL, this is the default value
                         position = "left",        -- OPTIONAL, this is the default value
                         reveal_file = curr_dir,   -- path to file or folder to reveal
                         reveal_force_cwd = false, -- change cwd without asking if needed
-                        toggle = true;
+                        toggle = true,
                     })
                 end,
             }
