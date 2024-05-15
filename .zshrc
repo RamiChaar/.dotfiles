@@ -23,8 +23,9 @@ PS1+='%F{1}$(git_branch_name) '
 PS1+='%F{15}%B»%b %F{188}'
 
 # aliases
-alias edit="nvim /Users/rami/.zshrc"
 alias clear="clear && printf '\e[3J'"
+alias ls="eza -a --long --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias edit="nvim /Users/rami/.zshrc"
 
 # navigation
 alias cloud="cd /Users/rami/Library/Mobile\ Documents/com\~apple\~CloudDocs/"

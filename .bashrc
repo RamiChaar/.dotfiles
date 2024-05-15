@@ -17,8 +17,9 @@ PS1+='\[\033[38;5;1m\]$(__git_ps1 "(%s)") '
 PS1+='\[\033[38;5;15m\]\$ \[\033[38;5;188m\]'
 
 # aliases
-alias edit="nvim /Users/rami/.bashrc" # editing this file
 alias clear="clear && printf '\e[3J'"
+alias ls="eza -a --long --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias edit="nvim /Users/rami/.bashrc" # editing this file
 
 # navigation
 alias cloud="cd /Users/rami/Library/Mobile\ Documents/com\~apple\~CloudDocs/"
