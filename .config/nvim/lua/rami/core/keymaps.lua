@@ -20,7 +20,7 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- Select all
-vim.keymap.set("n", "<leader>=", "gg0vG")
+vim.keymap.set("n", "<leader>=", "gg0vG$")
 
 -- keep cursor in middle when jumping and searching
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -46,3 +46,4 @@ vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 -- Get out Q
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "J", "<nop>")
