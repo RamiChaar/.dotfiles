@@ -2,7 +2,7 @@ return {
     "f-person/git-blame.nvim",
     config = function()
         require('gitblame').setup {
-            enabled = false,
+            enabled = true,
             date_format = "%r",
             delay = 200,
         }
