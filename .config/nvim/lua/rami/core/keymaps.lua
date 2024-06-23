@@ -1,10 +1,10 @@
 vim.g.mapleader = " "
 
 -- create new file in directory of current file
-vim.keymap.set("n", "<leader>n", function ()
-    local file_name = vim.fn.input("File Name > ")
-    vim.cmd(":e %:h/" .. file_name)
-    vim.cmd("w")
+vim.keymap.set("n", "<leader>n", function()
+  local file_name = vim.fn.input("File Name > ")
+  vim.cmd(":e %:h/" .. file_name)
+  vim.cmd("w")
 end)
 
 -- keymap for lazy and mason
