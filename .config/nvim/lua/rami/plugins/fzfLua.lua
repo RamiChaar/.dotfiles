@@ -6,7 +6,6 @@ return {
   config = function()
     local ok, fzf = pcall(require, "fzf-lua")
     local actions = require('fzf-lua.actions')
-    local path = require('fzf-lua.path')
     if not ok then
       return
     end
@@ -36,8 +35,6 @@ return {
         cwd_header   = false,
         cwd_prompt   = false,
         cmd          = "rg --line-number --no-heading --color=always -i -e",
-        grep_opts    = "--binary-files=without-match --recursive --color=auto --perl-regexp -e",
-        rg_opts      = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
         actions      = {
           ["ctrl-w"] = {
             function(_, opts)
