@@ -17,11 +17,14 @@ return {
           search_up = { icon = " " },
         },
       },
+      routes = {
+        { filter = { event = "msg_show" }, view = "mini" },
+      },
       commands = {
         history = {
           view = "popup",
         },
-      },
+      }
     })
     vim.keymap.set("n", "<leader>ml", function()
       require("noice").cmd("last")
