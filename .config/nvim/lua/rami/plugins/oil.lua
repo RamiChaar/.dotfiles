@@ -29,16 +29,6 @@ return {
           vim.cmd("e " .. curr_dir .. file_name)
           vim.cmd("w")
         end,
-        ["<leader>t"] = function()
-          local curr_dir = require('oil').get_current_dir()
-          require('neo-tree.command').execute({
-            source = "filesystem",                -- OPTIONAL, this is the default value
-            position = "left",                    -- OPTIONAL, this is the default value
-            reveal_file = curr_dir,               -- path to file or folder to reveal
-            reveal_force_cwd = false,             -- change cwd without asking if needed
-            toggle = true,
-          })
-        end,
       }
     })
     vim.keymap.set("n", "-", "<CMD>Oil<CR>")

@@ -18,7 +18,7 @@ PS1+='\[\033[38;5;15m\]\$ \[\033[38;5;188m\]'
 
 # aliases
 alias clear="clear && printf '\e[3J'"
-alias ls="eza -a --long --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza -a --long --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 alias edit="nvim /Users/rami/.bashrc" # editing this file
 
 # navigation
@@ -33,9 +33,12 @@ alias mail-splits="conda activate revs && python3 /Users/rami/Developer/scripts/
 
 # git
 alias view-branches="git log --graph --oneline --decorate --all"
+alias gitadd="git add . && git restore --staged config/local-rami.js"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"
 
 export CONDA_AUTO_ACTIVATE_BASE=false
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"

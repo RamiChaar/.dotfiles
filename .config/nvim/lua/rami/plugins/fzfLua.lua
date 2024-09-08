@@ -69,6 +69,7 @@ return {
         cwd_prompt = false,
       }
     })
+    fzf.register_ui_select()
   end,
   keys = {
     { "<leader>pf", "<cmd>FzfLua files<CR>",                    desc = "Open fzf files" },

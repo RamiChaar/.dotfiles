@@ -19,6 +19,8 @@ return {
       },
       routes = {
         { filter = { event = "msg_show" }, view = "mini" },
+        { filter = { event = "notify" }, view = "mini" },
+        { filter = { event = "lsp" }, view = "mini" }
       },
       commands = {
         history = {

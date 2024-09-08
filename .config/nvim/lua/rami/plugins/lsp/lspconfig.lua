@@ -11,7 +11,7 @@ return {
     local mason_lspconfig = require("mason-lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-    local keymap = vim.keymap     -- for conciseness
+    local keymap = vim.keymap -- for conciseness
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -20,25 +20,26 @@ return {
 
         -- set keybinds
         opts.desc = "Show line diagnostics"
-        keymap.set("n", "<leader>ds", vim.diagnostic.open_float, opts)         -- show diagnostics for line
+        keymap.set("n", "<leader>ls", vim.diagnostic.open_float, opts) -- show diagnostics for line
         opts.desc = "Go to previous diagnostic"
-        keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, opts)          -- jump to previous diagnostic in buffer
+        keymap.set("n", "<leader>lp", vim.diagnostic.goto_prev, opts)  -- jump to previous diagnostic in buffer
         opts.desc = "Go to next diagnostic"
-        keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, opts)          -- jump to next diagnostic in buffer
+        keymap.set("n", "<leader>ln", vim.diagnostic.goto_next, opts)  -- jump to next diagnostic in buffer
 
         opts.desc = "Show documentation for what is under cursor"
-        keymap.set("n", "<leader>lk", vim.lsp.buf.hover, opts)               -- show documentation for what is under cursor
+        keymap.set("n", "<leader>lk", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
         opts.desc = "Go to declaration"
-        keymap.set("n", "<leader>ld", vim.lsp.buf.declaration, opts)         -- go to declaration
+        keymap.set("n", "<leader>ld", vim.lsp.buf.declaration, opts) -- go to declaration
 
         opts.desc = "See available code actions"
-        keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)         -- see available code actions, in visual mode will apply to selection
+        keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
         opts.desc = "Smart rename"
-        keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)         -- smart rename
+        keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
         opts.desc = "Restart LSP"
-        keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)         -- mapping to restart lsp if necessary
+        keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
       end,
     })
 

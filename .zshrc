@@ -24,7 +24,7 @@ PS1+='%F{15}%B»%b %F{188}'
 
 # aliases
 alias clear="clear && printf '\e[3J'"
-alias ls="eza -a --long --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza -a --long --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 alias edit="nvim /Users/rami/.zshrc"
 
 # navigation
@@ -39,6 +39,10 @@ alias mail-splits="conda activate revs && python3 /Users/rami/Developer/scripts/
 
 # git
 alias view-branches="git log --graph --oneline --decorate --all"
+alias gitadd="git add . && git restore --staged config/local-rami.js"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"
 
 export CONDA_AUTO_ACTIVATE_BASE=false
 # >>> conda initialize >>>
