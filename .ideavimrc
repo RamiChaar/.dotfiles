@@ -1,0 +1,23 @@
+set clipboard+=unnamed
+let g:mapleader = " "
+
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap <leader>= gg0vG$
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+nnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+
+inoremap <C-c> <Esc>
+
+nnoremap Q <nop>
+nnoremap J <nop>
