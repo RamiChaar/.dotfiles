@@ -2,7 +2,7 @@ local function load_env_file(filepath)
   local env_file = io.open(filepath, "r")
 
   if not env_file then
-    print("No .env file found at " .. filepath)
+    -- print("No .env file found at " .. filepath)
     return
   end
 
@@ -50,7 +50,7 @@ return {
           program = '${workspaceFolder}/node_modules/@babel/node/bin/babel-node.js',
           args = { '${file}' },
           cwd = vim.fn.getcwd(),
-          runtimeExecutable = '/Users/ramichaar/.nvm/versions/node/v12.22.12/bin/node',
+          runtimeExecutable = '/Users/rami/.nvm/versions/node/v16.20.2/bin/node',
           runtimeArgs = { '--max-old-space-size=16384' },
           env = { LOG_METRICS = 'skip', NODE_ENV = 'rami' },
           sourceMaps = true,
@@ -63,7 +63,7 @@ return {
           program = '${workspaceFolder}/node_modules/@babel/node/bin/babel-node.js',
           args = { '${file}' },
           cwd = vim.fn.getcwd(),
-          runtimeExecutable = '/Users/ramichaar/.nvm/versions/node/v12.22.12/bin/node',
+          runtimeExecutable = '/Users/rami/.nvm/versions/node/v16.20.2/bin/node',
           runtimeArgs = { '--max-old-space-size=16384' },
           env = {
             LOG_METRICS = 'skip',

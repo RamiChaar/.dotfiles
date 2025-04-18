@@ -29,8 +29,8 @@ return {
         opts.desc = "Show documentation for what is under cursor"
         keymap.set("n", "<leader>lk", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
-        opts.desc = "Go to declaration"
-        keymap.set("n", "<leader>ld", vim.lsp.buf.declaration, opts) -- go to declaration
+        opts.desc = "Go to definition"
+        keymap.set("n", "<leader>ld", vim.lsp.buf.definition, opts) -- go to declaration
 
         opts.desc = "See available code actions"
         keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
