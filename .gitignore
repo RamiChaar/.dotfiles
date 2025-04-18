@@ -1,4 +1,6 @@
 .DS_Store
 node_modules
 /.config/raycast
+/.config/configstore
+/.config/karabiner/automatic_backups
 .env
