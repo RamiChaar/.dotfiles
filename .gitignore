@@ -2,5 +2,5 @@
 node_modules
 /.config/raycast
 /.config/karabiner/automatic_backups
-.config/configstore/
+/.config/configstore
 .env
