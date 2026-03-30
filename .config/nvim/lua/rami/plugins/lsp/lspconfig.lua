@@ -54,54 +54,56 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    mason_lspconfig.setup_handlers({
-      -- default handler for installed servers
-      function(server_name)
-        lspconfig[server_name].setup({
-          capabilities = capabilities,
-        })
-      end,
-      -- special server for lua
-      ["lua_ls"] = function()
-        lspconfig["lua_ls"].setup({
-          capabilities = capabilities,
-          settings = {
-            Lua = {
-              -- make the language server recognize "vim" global
-              diagnostics = {
-                globals = { "vim" },
-              },
-              completion = {
-                callSnippet = "Replace",
+    mason_lspconfig.setup({
+      handlers = {
+        -- default handler for installed servers
+        function(server_name)
+          lspconfig[server_name].setup({
+            capabilities = capabilities,
+          })
+        end,
+        -- special server for lua
+        ["lua_ls"] = function()
+          lspconfig["lua_ls"].setup({
+            capabilities = capabilities,
+            settings = {
+              Lua = {
+                -- make the language server recognize "vim" global
+                diagnostics = {
+                  globals = { "vim" },
+                },
+                completion = {
+                  callSnippet = "Replace",
+                },
               },
             },
-          },
-        })
-      end,
-      -- special option for python lsp server
-      ["pylsp"] = function()
-        lspconfig["pylsp"].setup({
-          settings = {
-            pylsp = {
-              plugins = {
-                pycodestyle = {
-                  ignore = { 'W191', 'W291', 'W391', 'E402' },
-                  maxLineLength = 200
+          })
+        end,
+        -- special option for python lsp server
+        ["pylsp"] = function()
+          lspconfig["pylsp"].setup({
+            settings = {
+              pylsp = {
+                plugins = {
+                  pycodestyle = {
+                    ignore = { 'W191', 'W291', 'W391', 'E402' },
+                    maxLineLength = 200
+                  }
                 }
               }
             }
-          }
-        })
-      end,
-      -- special option for python clang server
-      ["clangd"] = function()
-        lspconfig["clangd"].setup({
-          cmd = {
-            "clangd",
-            "--fallback-style=webkit"
-          }
-        })
-      end
+          })
+        end,
+        -- special option for python clang server
+        ["clangd"] = function()
+          lspconfig["clangd"].setup({
+            cmd = {
+              "clangd",
+              "--fallback-style=webkit"
+            }
+          })
+        end
+      },
     })
   end,
 }
